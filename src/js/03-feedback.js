@@ -41,11 +41,11 @@ function onTextareaInput(evt) {
 }
 
 function populateTextarea() {
-    const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const parsedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-    if (!savedMessage) return;
+    if (!parsedData) return;
 
-    email.value = savedMessage.email || '';
+    email.value = parsedData.email || '';
     
-    feedback.value = savedMessage.feedback || '';
+    feedback.value = parsedData.feedback || '';
 }
