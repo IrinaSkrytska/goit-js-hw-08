@@ -2,7 +2,7 @@ import throttle from 'lodash.throttle'
 
 const form = document.querySelector('.feedback-form');
 const email = document.querySelector('[name=email]');
-const feedback = document.querySelector('[name=message]');
+const message = document.querySelector('[name=message]');
 
 const STORAGE_KEY = "feedback-form-state";
 
@@ -19,7 +19,7 @@ function onFormSubmit(evt) {
 
     evt.preventDefault();
 
- if (email.value === "" || feedback.value === "") {
+ if (email.value === "" || message.value === "") {
         alert("Please fill in the empty fields");
         return;
  }
@@ -44,8 +44,8 @@ function populateTextarea() {
     const parsedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
     if (!parsedData) return;
-
-    email.value = parsedData.email || '';
     
-    feedback.value = parsedData.feedback || '';
+    email.value = parsedData.email || '';
+
+    message.value = parsedData.message || '';
 }
