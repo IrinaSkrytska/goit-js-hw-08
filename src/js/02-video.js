@@ -5,7 +5,7 @@ import Player from '@vimeo/player';
 
     const iframe = document.querySelector('iframe');
     
-    const player = new Vimeo.Player(iframe);
+    const player = new Player(iframe);
     
     // Разбери документацию метода on() и начни отслеживать событие timeupdate - обновление времени воспроизведения.
 
